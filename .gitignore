@@ -1,0 +1,19 @@
+# AI tools
+CLAUDE.md
+.claude/
+.agents/
+skills-lock.json
+
+# macOS
+.DS_Store
+*.swp
+
+# Xcode user data
+xcuserdata/
+*.xcuserstate
+
+# Build artifacts
+build/
+DerivedData/
+*.ipa
+*.dSYM.zip
