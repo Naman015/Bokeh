@@ -76,11 +76,13 @@ final class CameraManager: NSObject, ObservableObject, AVCaptureVideoDataOutputS
         case .notDetermined:
             permissionDenied = false
             AVCaptureDevice.requestAccess(for: .video) { granted in
-                NotificationCenter.default.post(
-                    name: .cameraAccessResult,
-                    object: nil,
-                    userInfo: ["granted": granted]
-                )
+                DispatchQueue.main.async {
+                    NotificationCenter.default.post(
+                        name: .cameraAccessResult,
+                        object: nil,
+                        userInfo: ["granted": granted]
+                    )
+                }
             }
         case .denied:
             permissionGranted = false
